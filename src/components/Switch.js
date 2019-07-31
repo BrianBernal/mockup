@@ -2,10 +2,6 @@ import React from 'react';
 import Emoji from './Emoji';
 
 
-// function legend(props) {
-//     let legend = <Emoji label={props.label} symbol={props.symbol}></Emoji>;
-// }
-
 const Switch = props => {
     let legend = <Emoji label={props.label} symbol={props.symbol}></Emoji>
     // legend = props.size === 'lg' ? <p className="h2"> {legend} </p> : legend;

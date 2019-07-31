@@ -28,7 +28,7 @@ const DescripcionRuta = () => {
                         </div>
                     </div>
                     <div className="col-sm-6 d-flex justify-content-around align-items-center">
-                        <b className="display-3 d-none d-lg-block d-xl-block"><Emoji label="furgon" symbol="🚚"></Emoji></b>
+                        <p className="display-3 d-none d-lg-block d-xl-block"><Emoji label="furgon" symbol="🚚"></Emoji></p>
                         <p className="h2" id="precio">$ 250.00 </p>
                         <button className="btn btn-danger">1</button>
                         <button className="btn btn-light">🌫</button>
