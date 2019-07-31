@@ -15,8 +15,8 @@ function App() {
 				<div className="col-md-10">
 					<Header></Header>
 					<FiltrosSmall></FiltrosSmall>
-					<Buscar></Buscar>
 					<main className="my-2">
+						<Buscar></Buscar>
 						<DescripcionRuta></DescripcionRuta>
 						<DescripcionRuta></DescripcionRuta>
 						<DescripcionRuta></DescripcionRuta>
