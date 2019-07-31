@@ -1,3 +1,6 @@
+.otot {
+  background: #b2cde9;;
+}
 * {
     margin: 0;
     padding: 0;
@@ -78,7 +81,7 @@ Pseudu-class by: Brian Bernal Hernandez
   }
   .switch input + label::before {
     right: 0;
-    background-color: #dee2e6;
+    background-color: #eccecb;
     border-radius: calc(2.375rem * .8);
     transition: 0.2s all;
   }

@@ -1,6 +1,7 @@
 import React from 'react';
 import imgFilter from '../imagenes/smartFilters.png';
 import Emoji from './Emoji';
+import Switch from './Switch';
 
 
 const Sidebar = () => (
@@ -11,29 +12,10 @@ const Sidebar = () => (
         </div>
 
         <div className="row mt-4 border-bottom border-dark">
-            <div className="card border-0 fondoMockup" style={{ width: '18rem' }}>
-                {/* <!-- Large switch --> */}
-                <div className="form-group">
-                    <span className="switch switch-lg d-flex justify-content-around align-items-center mt-2">
-                        <b className="h2"><Emoji label="diner" symbol="💲"></Emoji></b>
-                        <input type="checkbox" className="switch" id="switch-venta" />
-                        <label for="switch-venta"></label>
-                    </span>
-                </div>
-                <div className="form-group">
-                    <span className="switch switch-lg d-flex justify-content-around align-items-center mt-2">
-                        <b className="h2"><Emoji label="calendario" symbol="📆"></Emoji></b>
-                        <input type="checkbox" className="switch" id="switch-calendario" />
-                        <label for="switch-calendario"></label>
-                    </span>
-                </div>
-                <div className="form-group">
-                    <span className="switch switch-lg d-flex justify-content-around align-items-center mt-2">
-                        <b className="h2"><Emoji label="favorito" symbol="💗"></Emoji></b>
-                        <input type="checkbox" className="switch" id="switch-favorito" />
-                        <label for="switch-favorito"></label>
-                    </span>
-                </div>
+            <div className="form-group card border-0 fondoMockup" style={{ width: '18rem' }}>
+                <Switch symbol="💲" legend="dinero" id="switch-venta" size="lg"></Switch>
+                <Switch symbol="📆" legend="calendario" id="switch-calendar" size="lg"></Switch>
+                <Switch symbol="💗" legend="corazon" id="switch-corazon" size="lg"></Switch>
             </div>
         </div>
 
