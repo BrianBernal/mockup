@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Route, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import Emoji from './Emoji';
 
@@ -7,22 +7,21 @@ const Header = () => (
     <header>
         <ul className="nav nav-pills nav-fill bg-white">
             <li className="nav-item">
-                <a className="nav-link active" href="/"> <p className="d-block h4"><Emoji label="casa" symbol="🏠"></Emoji></p> Home</a>
+                <NavLink className="nav-link" exact to="/" activeClassName="active"> <p className="d-block h4"><Emoji label="casa" symbol="🏠"></Emoji></p> Home</NavLink>
             </li>
             <li className="nav-item">
-                <a className="nav-link" href="/"> <p className="d-block h4"><Emoji label="mensaje" symbol="📨"></Emoji></p> Messages</a>
+                <NavLink className="nav-link" to="/messages" activeClassName="active"> <p className="d-block h4"><Emoji label="mensaje" symbol="📨"></Emoji></p> Messages</NavLink>
             </li>
             <li className="nav-item">
-                <a className="nav-link" href="/"> <p className="d-block h4"><Emoji label="favoritos" symbol="⭐"></Emoji></p> Wishlist</a>
+                <NavLink className="nav-link" to="/wishlist" activeClassName="active"> <p className="d-block h4"><Emoji label="favoritos" symbol="⭐"></Emoji></p> Wishlist</NavLink>
             </li>
             <li className="nav-item">
-                <a className="nav-link" href="/"> <p className="d-block h4"><Emoji label="configuracion" symbol="⚙"></Emoji></p> Settings</a>
+                <NavLink className="nav-link" to="/settings" activeClassName="active"> <p className="d-block h4"><Emoji label="configuracion" symbol="⚙"></Emoji></p> Settings</NavLink>
             </li>
             <li className="nav-item">
-                <a className="nav-link" href="/"> <p className="d-block h4"><Emoji label="cuenta" symbol="👤"></Emoji></p> My Account</a>
+                <NavLink className="nav-link" to="/account" activeClassName="active"> <p className="d-block h4"><Emoji label="cuenta" symbol="👤"></Emoji></p> My Account</NavLink>
             </li>
         </ul>
     </header>
-);
-
+)
 export default Header;

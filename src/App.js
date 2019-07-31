@@ -1,11 +1,15 @@
 import React from 'react';
+import { BrowserRouter as Router, Route} from "react-router-dom";
+
 import './App.css';
 
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
-import Buscar from './components/Buscar';
-import FiltrosSmall from './components/FiltrosSmall';
-import DescripcionRuta from './components/DescripcionRuta';
+import Home from './containers/Home';
+import Messages from './containers/Messages';
+import Wishlist from './containers/Wishlist';
+import Settings from './containers/Settings';
+import Account from './containers/Account';
 
 function App() {
 	return (
@@ -13,14 +17,16 @@ function App() {
 			<div className="row border m-2 my-4 p-4 fondoMockup">
 				<Sidebar></Sidebar>
 				<div className="col-md-10">
-					<Header></Header>
-					<FiltrosSmall></FiltrosSmall>
-					<main className="my-2">
-						<Buscar></Buscar>
-						<DescripcionRuta></DescripcionRuta>
-						<DescripcionRuta></DescripcionRuta>
-						<DescripcionRuta></DescripcionRuta>
-					</main>
+					<Router>
+						<Header></Header>						
+						<main className="my-2">
+							<Route exact path='/' component={Home}></Route>
+							<Route path='/messages' component={Messages}></Route>
+							<Route path='/wishlist' component={Wishlist}></Route>
+							<Route path='/settings' component={Settings}></Route>
+							<Route path='/account' component={Account}></Route>
+						</main>
+					</Router>
 				</div>
 			</div>
 		</div>

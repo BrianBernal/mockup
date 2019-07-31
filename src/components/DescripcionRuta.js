@@ -12,8 +12,8 @@ const DescripcionRuta = () => {
                     className="row bg-white radius-table py-3 mx-1 flex justify-content-center align-items-center border-right">
                     <div className="col-sm-2 d-flex justify-content-center align-items-center border-right">
                         <div className="card-body">
-                            <h6 className="card-subtitle text-muted text-center">Monday</h6><br />
-                            <h6 className="card-subtitle text-muted text-center">10th 2:28</h6><br />
+                            <h6 className="card-subtitle text-muted text-center">Monday 10th</h6><br />
+                            <h6 className="card-subtitle text-muted text-center">2:28</h6><br />
                             <h6 className="card-subtitle text-muted text-center">PM</h6>
                         </div>
                     </div>
