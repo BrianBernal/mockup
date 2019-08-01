@@ -14,15 +14,15 @@ import Account from './containers/Account';
 class App extends Component {
 	constructor(props) {
 		super(props);
-		this.handleSideBar = this.handleSideBar.bind(this);
+		this.handlePathChange = this.handlePathChange.bind(this);
 		this.state = {isHome: true};
 	}
 
 	componentDidMount() {
-		this.handleSideBar();
+		this.handlePathChange();
 	}
 
-	handleSideBar() {
+	handlePathChange() {
 		if (window.location.pathname !== '/') {
 			this.setState({
 				isHome: false
@@ -35,14 +35,13 @@ class App extends Component {
 	}
 	
 	render() {
-		console.log(this.state.class)
 		return (
 			<div className="container-fluid">
 				<div className="row border m-2 my-4 p-4 fondoMockup">
 					<Sidebar isHome={this.state.isHome}/>
-					<div className="col-md-10"  onClick={this.handleSideBar}>
+					<div className="col-md-10">
 						<Router>
-							<Header/>
+							<Header onHandlePathChange={this.handlePathChange}/>
 							<main className="my-2">
 								<Route exact path='/' component={Home}></Route>
 								<Route path='/messages' component={Messages}></Route>
