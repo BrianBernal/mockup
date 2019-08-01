@@ -1,6 +1,6 @@
-.otot {
-  background: #b2cde9;;
-}
+/* 
+Author: Brian Bernal Hernandez
+ */
 * {
     margin: 0;
     padding: 0;
@@ -34,11 +34,10 @@
     border-radius: 3rem;
 }
 
+
 /* 
 Author: Cory LaViska 
 Source: https://www.abeautifulsite.net/bootstrap-4-switches
-
-Pseudu-class by: Brian Bernal Hernandez
 */
 
 .switch {
@@ -151,12 +150,15 @@ Pseudu-class by: Brian Bernal Hernandez
   }
   .switch + .switch {
     margin-left: 1rem;
-  }
-  
+  }  
   .dropdown-menu {
     margin-top: .75rem;
   }
 
+
+/* 
+Author: Brian Bernal Hernandez
+*/
 @media screen and (max-width: 573px) {
     body {
         padding: 0;
@@ -177,4 +179,15 @@ Pseudu-class by: Brian Bernal Hernandez
         font-display: auto;
         line-height: auto;
     }
+}
+
+
+.hideSidebar {
+    visibility: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  .hideSidebar {
+    display: none;
+  }
 }

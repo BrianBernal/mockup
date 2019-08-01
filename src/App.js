@@ -15,7 +15,7 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 		this.handleSideBar = this.handleSideBar.bind(this);
-		this.state = {sidebarVisibility: true};
+		this.state = {isHome: true};
 	}
 
 	componentDidMount() {
@@ -25,11 +25,11 @@ class App extends Component {
 	handleSideBar() {
 		if (window.location.pathname !== '/') {
 			this.setState({
-				sidebarVisibility: false
+				isHome: false
 			});
 		} else {
 			this.setState({
-				sidebarVisibility: true
+				isHome: true
 			});
 		}
 	}
@@ -39,7 +39,7 @@ class App extends Component {
 		return (
 			<div className="container-fluid">
 				<div className="row border m-2 my-4 p-4 fondoMockup">
-					<Sidebar visibility={this.state.sidebarVisibility}/>
+					<Sidebar isHome={this.state.isHome}/>
 					<div className="col-md-10"  onClick={this.handleSideBar}>
 						<Router>
 							<Header/>

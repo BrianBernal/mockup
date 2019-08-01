@@ -5,7 +5,7 @@ import Switch from './Switch';
 
 
 const Sidebar = props => {
-    const className = props.visibility ? 'col-md-2 px-5 d-none d-md-block' : 'col-md-2 px-5 invisible';
+    const className = props.isHome ? 'col-md-2 px-5 d-none d-md-block' : 'col-md-2 px-5 hideSidebar';
     
     return (
         <div className={className}>
