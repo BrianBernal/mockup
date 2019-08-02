@@ -8,7 +8,7 @@ const Account = () => {
                 <div className="card-header">Desarrollador Web - Fullstack Javascript</div>
                 <div className="card-body">
                     <h4 className="card-title">Brian Bernal Hernandez</h4>
-                    <h5 className="card-title">Tel: +57 3156273724</h5>
+                    <h5 className="card-title">Tel: +57 316 627 3724</h5>
                     <img className="my-2 card-img-top" src={foto}/>
   
                     <p className="card-text">
