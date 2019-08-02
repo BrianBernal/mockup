@@ -6,6 +6,35 @@ import FiltrosSmall from '../components/FiltrosSmall';
 
 
 class Home extends Component {
+    constructor(props) {
+        super(props);
+        this.handleFilterTextChange = this.handleFilterTextChange.bind(this);
+        this.state = {
+            filterText: ''
+        }
+    }
+
+    handleFilterTextChange(filterText) {
+        this.setState({
+            filterText: filterText
+        })
+    }
+
+    filtroBusqueda(datos) {
+        if (this.props.porPrecio) {
+            datos.sort((a,b) => a.precio-b.precio);            
+        }
+        if (this.state.filterText !== '') {
+            datos = datos.filter(element => {
+                return element.ciudadOrigen.toLowerCase().includes(this.state.filterText.toLowerCase()) ||
+                        element.ciudadDestino.toLowerCase().includes(this.state.filterText.toLowerCase()) ||
+                        element.precio.toString().includes(this.state.filterText) ||
+                        element.fecha.toLowerCase().includes(this.state.filterText.toLowerCase())
+            });
+        }
+        return datos;
+    }
+    
     render() {
         let datos = [
             {
@@ -54,13 +83,12 @@ class Home extends Component {
                 precio: 325.00
             }
         ];
-        if (this.props.porPrecio) {
-            datos.sort((a,b) => a.precio-b.precio);            
-        }        
+        datos = this.filtroBusqueda(datos);
+        
         return (
             <div>
                 <FiltrosSmall onHandleSwitchChange={this.props.onHandleSwitchChange}></FiltrosSmall>
-                <Buscar />
+                <Buscar OnHandleFilterTextChange={this.handleFilterTextChange}/>
                 {
                     datos.map(envio => (
                         <DescripcionRuta envio={envio} key={envio.id} />
