@@ -20,10 +20,8 @@ class Home extends Component {
         })
     }
 
-    filtroBusqueda(datos) {
-        if (this.props.porPrecio) {
-            datos.sort((a,b) => a.precio-b.precio);            
-        }
+    filtrosBusqueda(datos) {
+        // Barra buscar
         if (this.state.filterText !== '') {
             datos = datos.filter(element => {
                 return element.ciudadOrigen.toLowerCase().includes(this.state.filterText.toLowerCase()) ||
@@ -31,6 +29,10 @@ class Home extends Component {
                         element.precio.toString().includes(this.state.filterText) ||
                         element.fecha.toLowerCase().includes(this.state.filterText.toLowerCase())
             });
+        }
+        // Ordernar por precio
+        if (this.props.porPrecio) {
+            datos.sort((a,b) => a.precio-b.precio);            
         }
         return datos;
     }
@@ -83,7 +85,7 @@ class Home extends Component {
                 precio: 325.00
             }
         ];
-        datos = this.filtroBusqueda(datos);
+        datos = this.filtrosBusqueda(datos);
         
         return (
             <div>
