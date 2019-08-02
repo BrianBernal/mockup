@@ -18,7 +18,7 @@ class App extends Component {
 		this.handleSwitchChange = this.handleSwitchChange.bind(this);
 		this.state = {
 			isHome: true,
-			porPrecio: true
+			porPrecio: false
 		};
 	}
 

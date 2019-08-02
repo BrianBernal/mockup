@@ -7,7 +7,7 @@ import FiltrosSmall from '../components/FiltrosSmall';
 
 class Home extends Component {
     render() {
-        const datos = [
+        let datos = [
             {
                 id: 1,
                 fecha: 'Monday 10th',
@@ -54,7 +54,9 @@ class Home extends Component {
                 precio: 325.00
             }
         ];
-
+        if (this.props.porPrecio) {
+            datos.sort((a,b) => a.precio-b.precio);            
+        }        
         return (
             <div>
                 <FiltrosSmall onHandleSwitchChange={this.props.onHandleSwitchChange}></FiltrosSmall>
