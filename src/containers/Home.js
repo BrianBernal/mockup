@@ -57,7 +57,7 @@ class Home extends Component {
 
         return (
             <div>
-                <FiltrosSmall></FiltrosSmall>
+                <FiltrosSmall onHandleSwitchChange={this.props.onHandleSwitchChange}></FiltrosSmall>
                 <Buscar />
                 {
                     datos.map(envio => (

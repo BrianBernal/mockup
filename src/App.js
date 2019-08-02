@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 import './App.css';
 
@@ -15,35 +15,47 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 		this.handlePathChange = this.handlePathChange.bind(this);
-		this.state = {isHome: true};
+		this.handleSwitchChange = this.handleSwitchChange.bind(this);
+		this.state = {
+			isHome: true,
+			porPrecio: true
+		};
 	}
 
 	componentDidMount() {
 		this.handlePathChange();
 	}
-
+	// this.props.match.params
 	handlePathChange() {
-		if (window.location.pathname !== '/') {
-			this.setState({
-				isHome: false
-			});
-		} else {
-			this.setState({
-				isHome: true
-			});
-		}
+		this.setState({
+			isHome: window.location.pathname === '/home' ? true : false
+		})
+	}
+
+	handleSwitchChange() {
+		this.setState({
+			porPrecio: !this.state.porPrecio
+		})
 	}
 	
 	render() {
 		return (
 			<div className="container-fluid">
 				<div className="row border m-2 my-4 p-4 fondoMockup">
-					<Sidebar isHome={this.state.isHome}/>
+					<Sidebar isHome={this.state.isHome} onHandleSwitchChange={this.handleSwitchChange}/>
 					<div className="col-md-10">
 						<Router>
 							<Header onHandlePathChange={this.handlePathChange}/>
 							<main className="my-2">
-								<Route exact path='/' component={Home}></Route>
+								<Route 
+									exact path='/home' 
+									render={ () => (
+										<Home 
+											porPrecio={this.state.porPrecio} 
+											onHandleSwitchChange={this.handleSwitchChange}>
+										</Home>
+									)}>
+								</Route>
 								<Route path='/messages' component={Messages}></Route>
 								<Route path='/wishlist' component={Wishlist}></Route>
 								<Route path='/settings' component={Settings}></Route>

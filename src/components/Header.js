@@ -18,7 +18,7 @@ class Header extends Component {
             <header onClick={this.handlePathChange}>
                 <ul className="nav nav-pills nav-fill bg-white">
                     <li className="nav-item">
-                        <NavLink className="nav-link" exact to="/" activeClassName="active"> <p className="d-block h4"><Emoji label="casa" symbol="🏠"></Emoji></p> Home</NavLink>
+                        <NavLink className="nav-link" exact to="/home" activeClassName="active"> <p className="d-block h4"><Emoji label="casa" symbol="🏠"></Emoji></p> Home</NavLink>
                     </li>
                     <li className="nav-item">
                         <NavLink className="nav-link" to="/messages" activeClassName="active"> <p className="d-block h4"><Emoji label="mensaje" symbol="📨"></Emoji></p> Messages</NavLink>
