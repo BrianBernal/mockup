@@ -16,6 +16,7 @@ class FormData extends Component {
 
     enviarDatos(data) {
         console.log('guardar o ediar');
+        console.log(this.props.onAddData)
     }
 
     render() {

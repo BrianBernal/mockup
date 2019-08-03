@@ -87,7 +87,7 @@ class Home extends Component {
                 precio: 325.00
             }
         ];
-        datos = this.filtrosBusqueda(datos);
+        datos = this.filtrosBusqueda(this.props.datos.slice());
         
         return (
             <div>
