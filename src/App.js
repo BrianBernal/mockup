@@ -11,6 +11,7 @@ import Wishlist from './containers/Wishlist';
 import Settings from './containers/Settings';
 import Account from './containers/Account';
 import NotFound404 from './containers/NotFound404';
+import AddRow from './containers/AddRow';
 
 class App extends Component {
 	constructor(props) {
@@ -62,6 +63,8 @@ class App extends Component {
 									<Route path='/wishlist' component={Wishlist}></Route>
 									<Route path='/settings' component={Settings}></Route>
 									<Route path='/account' component={Account}></Route>
+									<Route path='/home/addrow' component={AddRow}></Route>
+
 									<Redirect exact from='/' to='/home' />
 									<Route component={NotFound404}></Route>
 								</Switch>
@@ -73,4 +76,5 @@ class App extends Component {
 		);
 	}
 }
+
 export default App;

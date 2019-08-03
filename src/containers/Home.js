@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import Buscar from '../components/Buscar';
 import DescripcionRuta from '../components/DescripcionRuta';
 import FiltrosSmall from '../components/FiltrosSmall';
+import Emoji from '../components/Emoji';
 
 
 class Home extends Component {
@@ -96,6 +98,9 @@ class Home extends Component {
                         <DescripcionRuta envio={envio} key={envio.id} />
                     ))
                 }
+                <Link className='btn btn-warning btn-lg rounded-circle p-3 botonFlotante' to="/home/addrow">
+                    <Emoji symbol="➕" label="Agregar Dato" size="md"/>
+                </Link>                
             </div>
         )
     }
