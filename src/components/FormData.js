@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
 class FormData extends Component {
     constructor(props) {
@@ -31,7 +32,7 @@ class FormData extends Component {
             ciudadDestino: e.target.ciudadDestino.value
         });
         this.props.onAddData(this.state);
-        console.log(this.state);        
+        this.props.history.push(('/home'))
     }
 
     render() {
@@ -95,4 +96,4 @@ class FormData extends Component {
     }
 }
 
-export default FormData;
+export default withRouter(FormData);
