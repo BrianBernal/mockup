@@ -4,7 +4,7 @@ import Emoji from './Emoji';
 import Chulito from './Chulito';
 
 const DescripcionRuta = props => {
-    const {fecha, hora, diaNoche, ciudadOrigen, ciudadDestino, precio} = props.envio;
+    const {fecha, hora, diaNoche, ciudadOrigen, ciudadDestino, precio} = props.fila;
     return (
         <div className="row mb-5">
             <Chulito></Chulito>

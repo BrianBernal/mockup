@@ -91,16 +91,11 @@ class App extends Component {
 		})
 	}
 
-	addData(datos) {
-		this.setState({
-			id: this.state.data.length,
-			fecha: datos.fecha,
-			hora: datos.hora,
-			diaNoche: datos.diaNoche,
-			ciudadOrigen: datos.ciudadOrigen,
-			ciudadDestino: datos.ciudadDestino,
-			precio: datos.precio
-		})
+	addData(nuevaFila) {
+		datos.push({
+			id: datos.length+1, 
+			...nuevaFila
+		});
 	}
 
 	render() {
@@ -130,7 +125,8 @@ class App extends Component {
 										render={() => (
 											<AddRow
 												porPrecio={this.state.porPrecio}
-												onAddData={this.addData}>
+												onAddData={this.addData}
+												onHandlePathChange={this.handlePathChange}>
 											</AddRow>
 										)}>
 									</Route>

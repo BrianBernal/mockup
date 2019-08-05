@@ -40,63 +40,15 @@ class Home extends Component {
     }
     
     render() {
-        let datos = [
-            {
-                id: 1,
-                fecha: 'Monday 10th',
-                hora: '2:28',
-                diaNoche: 'PM',
-                ciudadOrigen: 'Houston, TX, 33619',
-                ciudadDestino: 'Atlanta, GA, 30123',
-                precio: 250.00
-            },
-            {
-                id: 2,
-                fecha: 'friday 10th',
-                hora: '2:28',
-                diaNoche: 'PM',
-                ciudadOrigen: 'Villeta, VL, 23444',
-                ciudadDestino: 'Manizales, MZ, 211444',
-                precio: 140.00
-            },
-            {
-                id: 3,
-                fecha: 'Monday 10th',
-                hora: '2:28',
-                diaNoche: 'PM',
-                ciudadOrigen: 'Medellin, MD, 48488',
-                ciudadDestino: 'Bucaramanga, BC, 97766',
-                precio: 850.00
-            },
-            {
-                id: 4,
-                fecha: 'saturday 10th',
-                hora: '2:28',
-                diaNoche: 'PM',
-                ciudadOrigen: 'Paris, PR, 14422',
-                ciudadDestino: 'Barcelona, BC, 90120',
-                precio: 1000.00
-            },
-            {
-                id: 5,
-                fecha: 'thusday 10th',
-                hora: '2:28',
-                diaNoche: 'PM',
-                ciudadOrigen: 'London, LD, 53766',
-                ciudadDestino: 'Belfast, BF, 66555',
-                precio: 325.00
-            }
-        ];
-        datos = this.filtrosBusqueda(this.props.datos.slice());
-        
+        const datos = this.filtrosBusqueda(this.props.datos.slice());
         return (
             <div>
                 <FiltrosSmall onHandleSwitchChange={this.props.onHandleSwitchChange}></FiltrosSmall>
                 <Buscar OnHandleFilterTextChange={this.handleFilterTextChange}/>
                 {
-                    datos.map(envio => (
-                        <DescripcionRuta envio={envio} key={envio.id} />
-                    ))
+                    datos.map(fila => {
+                        return <DescripcionRuta fila={fila} key={fila.id.toString()} />
+                    })
                 }
                 <Link className='btn btn-warning btn-lg rounded-circle p-3 botonFlotante' to="/home/addrow">
                     <Emoji symbol="➕" label="Agregar Dato" size="md"/>
