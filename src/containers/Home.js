@@ -13,13 +13,14 @@ class Home extends Component {
         this.handleFilterTextChange = this.handleFilterTextChange.bind(this);
         this.state = {
             filterText: ''
-        }
+        };
+        this.props.onHandlePathChange();
     }
 
     handleFilterTextChange(filterText) {
         this.setState({
             filterText: filterText
-        })
+        });
     }
 
     filtrosBusqueda(datos) {

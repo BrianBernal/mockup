@@ -112,9 +112,10 @@ class App extends Component {
 										render={() => (
 											<Home
 												porPrecio={this.state.porPrecio}
+												datos={this.state.data}
 												onHandleSwitchChange={this.handleSwitchChange}
-												datos={this.state.data}>
-											</Home>
+												onHandlePathChange={this.handlePathChange}
+											/>
 										)}>
 									</Route>
 									<Route path='/messages' component={Messages}></Route>

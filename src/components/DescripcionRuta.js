@@ -32,7 +32,7 @@ const DescripcionRuta = props => {
                         <p className="display-3 d-none d-lg-block d-xl-block"><Emoji label="furgon" symbol="🚚"></Emoji></p>
                         <p className="h2" id="precio">$ {precio} </p>
                         <button className="btn btn-danger">1</button>
-                        <button className="btn btn-light">🌫</button>
+                        <button className="btn btn-light">🛠</button>
                     </div>
 
                 </div>

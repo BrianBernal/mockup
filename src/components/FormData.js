@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import ModalReact from './ModalReact';
 
 class FormData extends Component {
     constructor(props) {
         super(props);
         this.enviarDatos = this.enviarDatos.bind(this);
         this.onChangeValue = this.onChangeValue.bind(this);
+        this.leftButton = this.leftButton.bind(this);
+        this.rightButton = this.rightButton.bind(this);
         this.initialState = {
             fecha: '',
             hora: '',
             diaNoche: '',
             ciudadOrigen: '',
             ciudadDestino: '',
-            precio: 0
+            precio: 0,
+            showModal: false
         }
         this.state = this.initialState;
     }
@@ -31,14 +35,31 @@ class FormData extends Component {
             ciudadOrigen: e.target.ciudadOrigen.value,
             ciudadDestino: e.target.ciudadDestino.value
         });
-        this.props.onAddData(this.state);
-        this.props.history.push(('/home'))
+        await this.props.onAddData(this.state);
+        await this.setState({
+            showModal: true
+        });
+    }
+
+    async leftButton() {
+        await this.setState({
+            showModal: false
+        });
+        this.props.history.push(('/home'));
+    }
+
+    async rightButton() {
+        // this.setState(this.initialState);
+        await this.setState({
+            showModal: false
+        });
+        document.getElementById("formData").reset();
     }
 
     render() {
         // const { fecha, hora, diaNoche, ciudadOrigen, ciudadDestino, precio } = this.state;
         return (
-            <form onSubmit={this.enviarDatos} className="col-lg-6 border border-info rounded bg-light">
+            <form id="formData" onSubmit={this.enviarDatos} className="col-lg-6 border border-info rounded bg-light">
                 <br />
                 <div className="form-group">
                     <label htmlFor="fecha">Fecha</label>
@@ -91,6 +112,15 @@ class FormData extends Component {
                 <div className="form-group">
                     <button type="submit" className="btn btn-primary btn-lg">Guardar</button>
                 </div>
+                <ModalReact 
+                    showModal={this.state.showModal} 
+                    modalTitle="¡Ingreso Exitoso!"
+                    modalBody="¿Desea volver al home o ingresar una nueva fila?"
+                    leftText="Volver a Home" 
+                    rightText="Ingresar otra fila"
+                    leftButton={this.leftButton}
+                    rightButton={this.rightButton}
+                />
             </form>
         );
     }
