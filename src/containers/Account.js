@@ -9,7 +9,7 @@ const Account = () => {
                 <div className="card-body">
                     <h4 className="card-title">Brian Bernal Hernandez</h4>
                     <h5 className="card-title">Tel: +57 316 627 3724</h5>
-                    <img className="my-2 card-img-top" src={foto}/>
+                    <img className="my-2 card-img-top" src={foto} alt="..."/>
   
                     <p className="card-text">
                         Ingeniero de Sistemas. Diestro en manejo de tecnologías relacionadas al Desarrollo web especialmente aquellas inmersas en el lenguaje JavaScript (React, Express). Gran desempeño en Desarrollo Frontend, es decir, HTML5, css3, css-grid, flexbox, Bootstrap 4, Sass y el Framework (librería) React. Manejo intermedio de bases de datos PostgreSQL y MySQL. 

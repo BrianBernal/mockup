@@ -53,8 +53,6 @@ class ModalReact extends React.Component {
 			<div>
 				<Modal
 					isOpen={this.props.showModal}
-					// onAfterOpen={this.afterOpenModal} // *************************
-					// onRequestClose={this.closeModal} // *************************
 					style={customStyles}
 					contentLabel="Example Modal"
 				>

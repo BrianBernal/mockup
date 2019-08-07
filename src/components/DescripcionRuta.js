@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Emoji from './Emoji';
 import Chulito from './Chulito';
 
 const DescripcionRuta = props => {
-    const {fecha, hora, diaNoche, ciudadOrigen, ciudadDestino, precio} = props.fila;
+    const {id, fecha, hora, diaNoche, ciudadOrigen, ciudadDestino, precio} = props.fila;
     return (
         <div className="row mb-5">
             <Chulito></Chulito>
@@ -32,7 +33,7 @@ const DescripcionRuta = props => {
                         <p className="display-3 d-none d-lg-block d-xl-block"><Emoji label="furgon" symbol="🚚"></Emoji></p>
                         <p className="h2" id="precio">$ {precio} </p>
                         <button className="btn btn-danger">1</button>
-                        <button className="btn btn-light">🛠</button>
+                        <Link to={"/home/" + id} className="btn btn-light"><Emoji label="detalles" symbol="🛠"></Emoji></Link>
                     </div>
 
                 </div>

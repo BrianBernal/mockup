@@ -1,19 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Emoji from '../components/Emoji';
 
 const Home = () => (
     <div className="my-2 container">
-        <div class="jumbotron">
-            <h1 class="display-3 d-none d-md-block">Funcionalidades del Proyecto</h1>
-            <h4 class="d-block d-md-none">Funcionalidades del Proyecto</h4>
-            <p class="lead">A continuación encontrarás un breve resumen sobre las caracteristicas desarrolladas e implementadas en <Link to="/home">{window.location.hostname}/home</Link></p>
+        <div className="jumbotron">
+            <h1 className="display-3 d-none d-md-block">Funcionalidades del Proyecto</h1>
+            <h4 className="d-block d-md-none">Funcionalidades del Proyecto</h4>
+            <p className="lead">A continuación encontrarás un breve resumen sobre las caracteristicas desarrolladas e implementadas en <Link to="/home">{window.location.hostname}/home</Link></p>
         </div>
         <div className="accordion" id="accordionExample">
             <div className="card">
                 <div className="card-header" id="headingOne">
                     <h2 className="mb-0">
                         <button className="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Barra de Busqueda superior 🔍
+                            Barra de Busqueda superior <Emoji label="buscar" symbol="🔍"></Emoji>
                         </button>
                     </h2>
                 </div>
@@ -29,7 +30,7 @@ const Home = () => (
                 <div className="card-header" id="headingTwo">
                     <h2 className="mb-0">
                         <button className="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Switch lateral con emoticon de dolar 💲
+                            Switch lateral con emoticon de dolar <Emoji label="Dinero" symbol="💲"></Emoji>
                         </button>
                     </h2>
                 </div>
@@ -49,7 +50,7 @@ const Home = () => (
                 <div className="card-header" id="headingThree">
                     <h2 className="mb-0">
                         <button className="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Emoticones 😊
+                            Emoticones <Emoji label="emoji" symbol="😊"></Emoji>
                         </button>
                     </h2>
                 </div>
@@ -69,7 +70,7 @@ const Home = () => (
                 <div className="card-header" id="headingThree">
                     <h2 className="mb-0">
                         <button className="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Responsive Design 📲
+                            Responsive Design <Emoji label="Responsive" symbol="📲"></Emoji>
                         </button>
                     </h2>
                 </div>
