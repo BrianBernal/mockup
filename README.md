@@ -2,7 +2,7 @@
 
 With this mock I get my first Job as React Developer so this it has as many bugs as it is special ❤️
 
-It was made only with react, a lots of prop drilling, [boostwatch](https://bootswatch.com/flatly), [react-modal](https://www.npmjs.com/package/react-modal), and my icons are just emojis. 😅
+It was made only with react, react-router, a lots of prop drilling, [boostwatch](https://bootswatch.com/flatly), [react-modal](https://www.npmjs.com/package/react-modal), and my icons are just emojis. 😅
 
 See it deployed: https://mockup-brian.netlify.com/home
 
